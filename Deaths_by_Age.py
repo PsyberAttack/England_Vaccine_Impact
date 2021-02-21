@@ -107,7 +107,7 @@ first_date = divergence['date'].iloc[-1]
 last_date = divergence['date'].iloc[0]
 
 
-# Set markers for boundline annotations. Hard coded due to laziness and need for consistency
+# Set markers for boundline annotations. Hard coded due to laziness and to change inputs
 top_boundline = 10
 bottom_boundline = -13
 
@@ -154,13 +154,13 @@ divergence_plot.update_layout(
 )
 
 
-# # Saves chart as interactive HTML, with hover/rollover functions
-# divergence_plot.write_html('Charts/Deaths/Deaths_Divergence_' + timestamp + '_interactive.html')
-#
-#
-# # Saves chart as static PNG file
-# divergence_plot.write_image('Charts/Deaths/Deaths_Divergence_' + timestamp + '_static.png')
-#
-#
+# Saves chart as interactive HTML, with hover/rollover functions
+divergence_plot.write_html('Charts/Deaths/Deaths_Divergence_' + timestamp + '_interactive.html')
+
+
+# Saves chart as static PNG file
+divergence_plot.write_image('Charts/Deaths/Deaths_Divergence_' + timestamp + '_static.png')
+
+
 # Displays chart in browser
 divergence_plot.show()
