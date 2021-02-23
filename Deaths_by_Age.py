@@ -130,13 +130,13 @@ divergence_plot.add_annotation(x='2020-05-02', y=-25,
 
 
 # Adds shaded green box and text annotations for vaccination period
-divergence_plot.add_vrect(x0="2021-01-17", x1=last_date,
+divergence_plot.add_vrect(x0="2021-01-24", x1=last_date,
                           fillcolor="green", opacity=0.3, line_width=0)
 divergence_plot.add_annotation(x='2021-01-21', y=-25,
                                text="Vaccine<br>Divergence",
                                showarrow=False)
-divergence_plot.add_annotation(x='2021-01-29', y=23,
-                               text="59.42%<br>Over80s<br>(1 dose)",
+divergence_plot.add_annotation(x='2021-02-05', y=23,
+                               text="79.71%<br>Over80s<br>(1 dose)",
                                showarrow=False, xshift=5)
 
 
