@@ -12,7 +12,6 @@ pd.set_option('display.max_colwidth', None)
 # deaths = pd.read_csv('Data/Deaths/Deaths_Divergence_2021-03-02.csv')
 deaths = pd.read_csv('https://api.coronavirus.data.gov.uk/v2/data?areaType=nation&metric=newDeaths28DaysByDeathDateAgeDemographics&format=csv')
 
-
 # Remove extraneous data
 deaths = deaths[['date', 'age', 'deaths']]
 deaths = deaths.loc[(deaths['age'] != '60+') & (deaths['age'] != '00_59')]
@@ -32,7 +31,7 @@ sixties = ['60_64', '65_69']
 
 seventies = ['70_74', '75_79']
 
-over80s = ['80_85', '85_89', '90+']
+over80s = ['80_84', '85_89', '90+', '90']
 
 
 # Create two new Dataframes from bucketed API data for Under/Over 80s
@@ -40,6 +39,8 @@ under60 = deaths.loc[deaths['age'].isin(under60s)].copy()
 over80 = deaths.loc[deaths['age'].isin(over80s)].copy()
 seventy = deaths.loc[deaths['age'].isin(seventies)].copy()
 sixty = deaths.loc[deaths['age'].isin(sixties)].copy()
+
+print(over80)
 
 # Group and sum daily deaths for Under 80s and rename column for housekeeping
 under60 = under60[['date', 'deaths']]
@@ -65,10 +66,10 @@ divergence = pd.concat([under60, sixty, seventy, over80])
 divergence.sort_values(['date', 'age'], inplace=True)
 
 # divergence = divergence.loc[divergence['date'] >= '2020-09-01']
-divergence.reset_index(inplace=True)
+divergence.reset_index(inplace=True, drop=True)
 
 # divergence.sort_values(['date', 'age'], inplace=True)
-print(divergence)
+# print(divergence)
 last_date = divergence['date'].iloc[-1]
 
 # Prepare chart to show daily divergence
