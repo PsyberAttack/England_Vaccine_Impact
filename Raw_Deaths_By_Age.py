@@ -40,8 +40,6 @@ over80 = deaths.loc[deaths['age'].isin(over80s)].copy()
 seventy = deaths.loc[deaths['age'].isin(seventies)].copy()
 sixty = deaths.loc[deaths['age'].isin(sixties)].copy()
 
-print(over80)
-
 # Group and sum daily deaths for Under 80s and rename column for housekeeping
 under60 = under60[['date', 'deaths']]
 under60 = under60.groupby(['date'], as_index=False).sum()
