@@ -10,7 +10,7 @@ pd.set_option('display.max_colwidth', None)
 
 
 # deaths = pd.read_csv('Data/Deaths/Deaths_Divergence_2021-03-02.csv')
-deaths = pd.read_csv('https://api.coronavirus.data.gov.uk/v2/data?areaType=nation&metric=newDeaths28DaysByDeathDateAgeDemographics&format=csv')
+deaths = pd.read_csv('https://api.coronavirus.data.gov.uk/v2/data?areaType=nation&areaCode=E92000001&metric=newDeaths28DaysByDeathDateAgeDemographics&format=csv')
 
 # Remove extraneous data
 deaths = deaths[['date', 'age', 'deaths']]

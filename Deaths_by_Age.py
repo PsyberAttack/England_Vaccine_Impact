@@ -10,7 +10,7 @@ pd.set_option('display.max_colwidth', None)
 
 
 # Download data from API and load into Dataframe
-deaths_data = pd.read_csv('https://api.coronavirus.data.gov.uk/v2/data?areaType=nation&metric=newDeaths28DaysByDeathDateAgeDemographics&format=csv')
+deaths_data = pd.read_csv('https://api.coronavirus.data.gov.uk/v2/data?areaType=nation&areaCode=E92000001&metric=newDeaths28DaysByDeathDateAgeDemographics&format=csv')
 
 
 # Remove extraneous data
